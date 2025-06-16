@@ -9,66 +9,72 @@
 </head>
 <body>
     <header id="header">
-        <div class="logo">
-            <i class="fas fa-code"></i>
-            <span>FabricioZL</span>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <span>FabricioZL</span>
+            </div>
+            <nav>
+                <a href="#hero">Inicio</a>
+                <a href="#about">Sobre Mí</a>
+                <a href="#projects">Proyectos</a>
+                <a href="#contact">Contacto</a>
+                <button class="theme-toggle" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i> Modo Oscuro
+                </button>
+            </nav>
         </div>
-        <nav>
-            <a href="#hero">Inicio</a>
-            <a href="#about">Sobre Mí</a>
-            <a href="#projects">Proyectos</a>
-            <a href="#contact">Contacto</a>
-            <button class="theme-toggle" id="dark-mode-toggle">
-                <i class="fas fa-moon"></i> Modo Oscuro
-            </button>
-        </nav>
     </header>
 
     <section class="hero" id="hero">
-        <div class="hero-content">
-            <h1>Hola, soy <span>Fabricio Andres Zeballos Leigue</span><br>Diseñador Web & Editor</h1>
-            <p>Apasionado por crear experiencias digitales impactantes, dar vida a historias a través de la edición de libros y explorar el fascinante mundo de las redes y telecomunicaciones.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-eye"></i> Ver Proyectos
-                </a>
-                <a href="#contact" class="btn btn-outline">
-                    <i class="fas fa-paper-plane"></i> Contactar
-                </a>
+        <div class="container" style="display: flex; align-items: center;">
+            <div class="hero-content">
+                <h1>Hola, soy <span>Fabricio Andres Zeballos Leigue</span><br>Diseñador Web & Editor</h1>
+                <p>Apasionado por crear experiencias digitales impactantes, dar vida a historias a través de la edición de libros y explorar el fascinante mundo de las redes y telecomunicaciones.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> Ver Proyectos
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i> Contactar
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1470&auto=format&fit=crop" alt="Fabricio Zeballos">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1470&auto=format&fit=crop" alt="Fabricio Zeballos">
+            </div>
         </div>
     </section>
 
     <section class="about" id="about">
-        <div class="section-title">
-            <h2>Sobre Mí</h2>
-            <p>Conoce más sobre mi trayectoria profesional y mis habilidades</p>
-        </div>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Diseñador Web, Editor de Libros y Apasionado por las Telecomunicaciones</h3>
-                <p>Con más de 1 año de experiencia en el diseño y desarrollo web, he trabajado en diversos proyectos que van desde sitios corporativos hasta aplicaciones web complejas. Mi enfoque se centra en crear interfaces intuitivas y experiencias de usuario excepcionales.</p>
-                <p>Como editor de libros, he colaborado con autores para dar vida a sus historias, trabajando en la corrección, maquetación y diseño de publicaciones impresas y digitales. Esta experiencia me ha permitido desarrollar un ojo agudo para los detalles y una comprensión profunda de la narrativa visual.</p>
-                <p>Mi pasión por las redes y telecomunicaciones me mantiene siempre actualizado con las últimas tecnologías y tendencias del sector. Disfruto explorando cómo la conectividad y la infraestructura de redes pueden transformar la forma en que interactuamos con el mundo digital.</p>
-                
-                <div class="skills">
-                    <div class="skill-card fade-in">
-                        <i class="fas fa-laptop-code"></i>
-                        <h4>Diseño Web</h4>
-                        <p>HTML, CSS, JavaScript,PHP</p>
-                    </div>
-                    <div class="skill-card fade-in">
-                        <i class="fas fa-book"></i>
-                        <h4>Edición de Libros</h4>
-                        <p>Corrección, Maquetación, Diseño Editorial</p>
-                    </div>
-                    <div class="skill-card fade-in">
-                        <i class="fas fa-network-wired"></i>
-                        <h4>Redes & Telecom</h4>
-                        <p>Infraestructura, Seguridad, Tecnologías Emergentes</p>
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Mí</h2>
+                <p>Conoce más sobre mi trayectoria profesional y mis habilidades</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Diseñador Web, Editor de Libros y Apasionado por las Telecomunicaciones</h3>
+                    <p>Con más de 1 año de experiencia en el diseño y desarrollo web, he trabajado en diversos proyectos que van desde sitios corporativos hasta aplicaciones web complejas. Mi enfoque se centra en crear interfaces intuitivas y experiencias de usuario excepcionales.</p>
+                    <p>Como editor de libros, he colaborado con autores para dar vida a sus historias, trabajando en la corrección, maquetación y diseño de publicaciones impresas y digitales. Esta experiencia me ha permitido desarrollar un ojo agudo para los detalles y una comprensión profunda de la narrativa visual.</p>
+                    <p>Mi pasión por las redes y telecomunicaciones me mantiene siempre actualizado con las últimas tecnologías y tendencias del sector. Disfruto explorando cómo la conectividad y la infraestructura de redes pueden transformar la forma en que interactuamos con el mundo digital.</p>
+                    
+                    <div class="skills">
+                        <div class="skill-card fade-in">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Diseño Web</h4>
+                            <p>HTML, CSS, JavaScript, PHP</p>
+                        </div>
+                        <div class="skill-card fade-in">
+                            <i class="fas fa-book"></i>
+                            <h4>Edición de Libros</h4>
+                            <p>Corrección, Maquetación, Diseño Editorial</p>
+                        </div>
+                        <div class="skill-card fade-in">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>Redes & Telecom</h4>
+                            <p>Infraestructura, Seguridad, Tecnologías Emergentes</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,146 +82,161 @@
     </section>
 
     <section class="projects" id="projects">
-        <div class="section-title">
-            <h2>Mis Proyectos</h2>
-            <p>Algunos de mis trabajos recientes en diseño web y edición</p>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1374&auto=format&fit=crop" alt="Proyecto Web">
-                </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag">Diseño Web</span>
-                        <span class="tag">E-commerce</span>
-                    </div>
-                    <h3>Tienda Online de Moda</h3>
-                    <p>Diseño y desarrollo de una plataforma e-commerce completa con sistema de gestión de inventario y pasarela de pagos.</p>
-                    <a href="#" class="project-link">
-                        Ver Proyecto <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Mis Proyectos</h2>
+                <p>Algunos de mis trabajos recientes en diseño web y edición</p>
             </div>
-            
-            <div class="card">
-                    <h3>Proyecto Libro</h3>
-                    <img src="Fundamentos Produccion Manufactura Flexible (2).png" alt="Portada del libro Fundamentos de Producción y Manufactura Flexible" style="max-width: 100%; height: auto; margin-bottom: 15px;">
-                    <p>Participación en la creación del libro "Fundamentos de Producción y Manufactura Flexible" publicado por la Universidad Privada Domingo Savio.</p>
-                </div>
-            
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1480&auto=format&fit=crop" alt="Proyecto Telecom">
-                </div>
-                <div class="project-info">
-                    <div class="project-tags">
-                        <span class="tag">Telecomunicaciones</span>
-                        <span class="tag">Infraestructura</span>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1374&auto=format&fit=crop" alt="Proyecto Web">
                     </div>
-                    <h3>Plataforma para calculo</h3>
-                    <p>Diseño de interfaz para sistema de monitoreo de redes empresariales con visualización de datos en tiempo real.</p>
-                    <a href="#" class="project-link">
-                        Ver Proyecto <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Diseño Web</span>
+                            <span class="tag">E-commerce</span>
+                        </div>
+                        <h3>Tienda Online de Moda</h3>
+                        <p>Diseño y desarrollo de una plataforma e-commerce completa con sistema de gestión de inventario y pasarela de pagos.</p>
+                        <a href="#" class="project-link">
+                            Ver Proyecto <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- TARJETA DEL LIBRO CORREGIDA -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="Fundamentos Produccion Manufactura Flexible (2).png" alt="Portada del libro Fundamentos de Producción y Manufactura Flexible">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Edición</span>
+                            <span class="tag">Libro</span>
+                        </div>
+                        <h3>Proyecto Libro</h3>
+                        <p>Participación en la creación del libro "Fundamentos de Producción y Manufactura Flexible" publicado por la Universidad Privada Domingo Savio.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1480&auto=format&fit=crop" alt="Proyecto Telecom">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Telecomunicaciones</span>
+                            <span class="tag">Infraestructura</span>
+                        </div>
+                        <h3>Plataforma para calculo</h3>
+                        <p>Diseño de interfaz para sistema de monitoreo de redes empresariales con visualización de datos en tiempo real.</p>
+                        <a href="#" class="project-link">
+                            Ver Proyecto <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
-        <div class="section-title">
-            <h2>Contacto</h2>
-            <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-card fade-in">
-                    <h3>Información de Contacto</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>fabrizzio.andrews@gmail.com</p>
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card fade-in">
+                        <h3>Información de Contacto</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>fabrizzio.andrews@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+591 61532310</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Santa Cruz, Bolivia</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Teléfono</h4>
-                            <p>+591 61532310</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Ubicación</h4>
-                            <p>Santa Cruz, Bolivia</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    
+                    <div class="contact-card fade-in">
+                        <h3>Servicios Ofrecidos</h3>
+                        <ul>
+                            <li>Diseño y Desarrollo Web</li>
+                            <li>Diseño de Interfaz de Usuario (UI/UX)</li>
+                            <li>Edición y Corrección de Libros</li>
+                            <li>Diseño Editorial y Maquetación</li>
+                            <li>Consultoría en Redes y Telecomunicaciones</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="contact-card fade-in">
-                    <h3>Servicios Ofrecidos</h3>
-                    <ul>
-                        <li>Diseño y Desarrollo Web</li>
-                        <li>Diseño de Interfaz de Usuario (UI/UX)</li>
-                        <li>Edición y Corrección de Libros</li>
-                        <li>Diseño Editorial y Maquetación</li>
-                        <li>Consultoría en Redes y Telecomunicaciones</li>
-                    </ul>
+                <div class="contact-form fade-in">
+                    <h3>Envíame un Mensaje</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" placeholder="Fabricio Andres Zeballos Leigue" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="tuemail@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" placeholder="¿Sobre qué quieres hablar?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
                 </div>
-            </div>
-            
-            <div class="contact-form fade-in">
-                <h3>Envíame un Mensaje</h3>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" placeholder="Fabricio Andres Zeballos Leigue" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="tuemail@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Asunto</label>
-                        <input type="text" id="subject" placeholder="¿Sobre qué quieres hablar?">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                    </button>
-                </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                F<span>Z</span>
-            </div>
-            <p>Diseñador Web · Editor de Libros · Apasionado por las Telecomunicaciones</p>
-            <div class="footer-links">
-                <a href="#hero">Inicio</a>
-                <a href="#about">Sobre Mí</a>
-                <a href="#projects">Proyectos</a>
-                <a href="#contact">Contacto</a>
-                <a href="#">Blog</a>
-                <a href="#">Términos</a>
-            </div>
-            <div class="copyright">
-                &copy; 2025 Fabricio Andres Zeballos Leigue. Todos los derechos reservados.
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    F<span>Z</span>
+                </div>
+                <p>Diseñador Web · Editor de Libros · Apasionado por las Telecomunicaciones</p>
+                <div class="footer-links">
+                    <a href="#hero">Inicio</a>
+                    <a href="#about">Sobre Mí</a>
+                    <a href="#projects">Proyectos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Términos</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Fabricio Andres Zeballos Leigue. Todos los derechos reservados.
+                </div>
             </div>
         </div>
     </footer>
