@@ -645,6 +645,12 @@ footer {
     width: 100%;
     color: #94a3b8;
 }
+.card img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: white;
+}
 
 /* Animaciones */
 .fade-in {
