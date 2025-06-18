@@ -3,33 +3,762 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabricio Andres Zeballos Leigue - Portafolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Fabricio Zeballos - Portafolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos mejorados */
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #8f94fb;
+            --dark-color: #1a1a2e;
+            --light-color: #f4f4f9;
+            --accent-color: #ff7e5f;
+            --text-color: #333;
+            --text-light: #666;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        .dark-mode {
+            --primary-color: #6a7bff;
+            --secondary-color: #5c6bc0;
+            --dark-color: #121212;
+            --light-color: #1e1e2e;
+            --text-color: #e0e0e0;
+            --text-light: #a0a0a0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        /* Header */
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .dark-mode #header {
+            background-color: rgba(26, 26, 46, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background: var(--light-color);
+            color: var(--text-color);
+            box-shadow: var(--shadow);
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle i {
+            margin-right: 8px;
+        }
+
+        .dark-mode .theme-toggle {
+            background: var(--dark-color);
+            color: var(--text-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dark-mode .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 3px solid var(--primary-color);
+        }
+
+        .dark-mode .skill-card {
+            background: var(--dark-color);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .skill-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--text-light);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .dark-mode .project-card {
+            background: var(--dark-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(78, 84, 200, 0.1);
+            color: var(--primary-color);
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .project-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .project-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .contact-card {
+            background: var(--dark-color);
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .contact-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(78, 84, 200, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .contact-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(78, 84, 200, 0.1);
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .contact-form {
+            background: var(--dark-color);
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .contact-form h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--light-color);
+            color: var(--text-color);
+        }
+
+        .dark-mode .form-group input,
+        .dark-mode .form-group textarea {
+            border: 1px solid #333;
+            background: var(--dark-color);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            width: 100%;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+        }
+
+        .dark-mode footer {
+            background: #0d0d1a;
+        }
+
+        .footer-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-content p {
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Animaciones */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+            }
+            
+            .theme-toggle {
+                margin: 15px 0 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header id="header">
-        <div class="container header-content">
-            <div class="logo">
-                <i class="fas fa-code"></i>
-                <span>FabricioZL</span>
-            </div>
-            <nav>
-                <a href="#hero">Inicio</a>
-                <a href="#about">Sobre Mí</a>
-                <a href="#projects">Proyectos</a>
-                <a href="#contact">Contacto</a>
-                <button class="theme-toggle" id="dark-mode-toggle">
-                    <i class="fas fa-moon"></i> Modo Oscuro
-                </button>
-            </nav>
+        <div class="logo">
+            <i class="fas fa-code"></i>
+            <span>FabricioZ</span>
         </div>
+        <nav>
+            <a href="#hero">Inicio</a>
+            <a href="#about">Sobre Mí</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#contact">Contacto</a>
+            <button class="theme-toggle" id="dark-mode-toggle">
+                <i class="fas fa-moon"></i> Modo Oscuro
+            </button>
+        </nav>
     </header>
 
     <section class="hero" id="hero">
-        <div class="container" style="display: flex; align-items: center;">
+        <div class="container">
             <div class="hero-content">
-                <h1>Hola, soy <span>Fabricio Andres Zeballos Leigue</span><br>Diseñador Web & Editor</h1>
+                <h1>Hola, soy <span>Fabricio Zeballos</span><br>Diseñador Web & Editor</h1>
                 <p>Apasionado por crear experiencias digitales impactantes, dar vida a historias a través de la edición de libros y explorar el fascinante mundo de las redes y telecomunicaciones.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">
@@ -55,7 +784,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Diseñador Web, Editor de Libros y Apasionado por las Telecomunicaciones</h3>
-                    <p>Con más de 1 año de experiencia en el diseño y desarrollo web, he trabajado en diversos proyectos que van desde sitios corporativos hasta aplicaciones web complejas. Mi enfoque se centra en crear interfaces intuitivas y experiencias de usuario excepcionales.</p>
+                    <p>Con más de 5 años de experiencia en el diseño y desarrollo web, he trabajado en diversos proyectos que van desde sitios corporativos hasta aplicaciones web complejas. Mi enfoque se centra en crear interfaces intuitivas y experiencias de usuario excepcionales.</p>
                     <p>Como editor de libros, he colaborado con autores para dar vida a sus historias, trabajando en la corrección, maquetación y diseño de publicaciones impresas y digitales. Esta experiencia me ha permitido desarrollar un ojo agudo para los detalles y una comprensión profunda de la narrativa visual.</p>
                     <p>Mi pasión por las redes y telecomunicaciones me mantiene siempre actualizado con las últimas tecnologías y tendencias del sector. Disfruto explorando cómo la conectividad y la infraestructura de redes pueden transformar la forma en que interactuamos con el mundo digital.</p>
                     
@@ -63,7 +792,7 @@
                         <div class="skill-card fade-in">
                             <i class="fas fa-laptop-code"></i>
                             <h4>Diseño Web</h4>
-                            <p>HTML, CSS, JavaScript, PHP</p>
+                            <p>HTML, CSS, JavaScript, React, WordPress</p>
                         </div>
                         <div class="skill-card fade-in">
                             <i class="fas fa-book"></i>
@@ -88,6 +817,7 @@
                 <p>Algunos de mis trabajos recientes en diseño web y edición</p>
             </div>
             <div class="projects-grid">
+                <!-- Proyecto 1: Diseño Web -->
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1374&auto=format&fit=crop" alt="Proyecto Web">
@@ -105,32 +835,90 @@
                     </div>
                 </div>
                 
-                <!-- TARJETA DEL LIBRO CORREGIDA -->
+                <!-- Proyecto 2: Edición -->
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <img src="https://i.postimg.cc/bY2j8Swn/Fundamentos-Produccion-Manufactura-Flexible.jpg" alt="Portada del libro Fundamentos de Producción y Manufactura Flexible">
+                        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1470&auto=format&fit=crop" alt="Proyecto Libro">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <span class="tag">Edición</span>
-                            <span class="tag">Libro</span>
+                            <span class="tag">Diseño Editorial</span>
                         </div>
-                        <h3>Proyecto Libro</h3>
-                        <p>Participación en la creación del libro "Fundamentos de Producción y Manufactura Flexible" publicado por la Universidad Privada Domingo Savio.</p>
+                        <h3>Colección Literaria "Horizontes"</h3>
+                        <p>Edición y diseño de una colección de cuentos cortos, incluyendo corrección de estilo, maquetación y diseño de portada.</p>
+                        <a href="#" class="project-link">
+                            Ver Proyecto <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
                 
+                <!-- Proyecto 3: Telecomunicaciones -->
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <img src="https://i.postimg.cc/bY2j8Swn/Fundamentos-Produccion-Manufactura-Flexible.jpg" alt="Proyecto Telecom">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1480&auto=format&fit=crop" alt="Proyecto Telecom">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <span class="tag">Telecomunicaciones</span>
                             <span class="tag">Infraestructura</span>
                         </div>
-                        <h3>Plataforma para calculo</h3>
+                        <h3>Plataforma de Monitoreo de Red</h3>
                         <p>Diseño de interfaz para sistema de monitoreo de redes empresariales con visualización de datos en tiempo real.</p>
+                        <a href="#" class="project-link">
+                            Ver Proyecto <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Nuevo proyecto 1: Diseño Web con tu imagen -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/bY2j8Sw-n/Fundamentos-Produccion-Manufactura-Flexible.jpg" alt="Portal Educativo">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Diseño Web</span>
+                            <span class="tag">Educación</span>
+                        </div>
+                        <h3>Portal Educativo "AprendeYa"</h3>
+                        <p>Desarrollo de una plataforma de aprendizaje online con funcionalidades como cursos interactivos, foros de discusión y seguimiento de progreso.</p>
+                        <a href="#" class="project-link">
+                            Ver Proyecto <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Nuevo proyecto 2: Edición -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?q=80&w=1374&auto=format&fit=crop" alt="Libro Científico">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Edición</span>
+                            <span class="tag">Ciencia</span>
+                        </div>
+                        <h3>Libro Científico "Fronteras del Conocimiento"</h3>
+                        <p>Edición y diseño de una obra científica multidisciplinaria con ilustraciones técnicas, gráficos complejos y referencias cruzadas.</p>
+                        <a href="#" class="project-link">
+                            Ver Proyecto <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Nuevo proyecto 3: Telecomunicaciones -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1470&auto=format&fit=crop" alt="Redes 5G">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Telecomunicaciones</span>
+                            <span class="tag">Investigación</span>
+                        </div>
+                        <h3>Estudio de Implementación de 5G</h3>
+                        <p>Análisis técnico y propuesta de implementación de redes 5G para ciudades inteligentes, incluyendo aspectos de infraestructura y seguridad.</p>
                         <a href="#" class="project-link">
                             Ver Proyecto <i class="fas fa-arrow-right"></i>
                         </a>
@@ -154,14 +942,14 @@
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Email</h4>
-                                <p>fabrizzio.andrews@gmail.com</p>
+                                <p>fabricio@ejemplo.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h4>Teléfono</h4>
-                                <p>+591 61532310</p>
+                                <p>+1 (123) 456-7890</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -196,11 +984,11 @@
                     <form>
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" id="name" placeholder="Fabricio Andres Zeballos Leigue" required>
+                            <input type="text" id="name" placeholder="Tu nombre completo" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="tuemail@email.com" required>
+                            <input type="email" id="email" placeholder="tu@email.com" required>
                         </div>
                         <div class="form-group">
                             <label for="subject">Asunto</label>
@@ -235,12 +1023,89 @@
                     <a href="#">Términos</a>
                 </div>
                 <div class="copyright">
-                    &copy; 2025 Fabricio Andres Zeballos Leigue. Todos los derechos reservados.
+                    &copy; 2024 Fabricio Zeballos. Todos los derechos reservados.
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Modo oscuro
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        
+        // Comprobar preferencia del sistema
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Comprobar si hay una preferencia guardada
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> Modo Claro';
+        } else if (currentTheme === 'light') {
+            body.classList.remove('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i> Modo Oscuro';
+        } else if (prefersDarkScheme.matches) {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> Modo Claro';
+        }
+        
+        darkModeToggle.addEventListener('click', function() {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i> Modo Oscuro';
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> Modo Claro';
+            }
+        });
+        
+        // Animación de scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Smooth scrolling para enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Cambio de header al hacer scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '15px 5%';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.padding = '20px 5%';
+            }
+        });
+    </script>
 </body>
 </html>
